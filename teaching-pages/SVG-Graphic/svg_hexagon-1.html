@@ -1,0 +1,771 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>svg_hexagon-1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2d92a5e8-d51e-815a-b34f-f653c3a472aa" class="page sans"><header><h1 class="page-title" dir="auto">svg_hexagon-1</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="2d92a5e8-d51e-81c9-91d5-d89d9515161d" class=""><strong>正六邊形、圓弧、三角形的美妙組合</strong></p></div><div style="display:contents" dir="auto"><h2 id="2d92a5e8-d51e-812b-9772-d2adb05bd765" class="block-color-blue">在新分頁開啟連結 </h2></div><div style="display:contents" dir="auto"><h3 id="2d92a5e8-d51e-81fd-821e-e29c3020d047" class=""><mark class="highlight-red">Online Html Viewer </mark>   <a href="https://html.onlineviewer.net/">https://html.onlineviewer.net/</a></h3></div><div style="display:contents" dir="auto"><p id="2d92a5e8-d51e-817a-9a83-f62e16fe5718" class="">
+</p></div><div style="display:contents" dir="auto"><hr id="2d92a5e8-d51e-8125-8888-f2e3327ab052"/></div><div style="display:contents" dir="auto"><h3 id="2d92a5e8-d51e-81f9-b681-ca409819e17a" class="">Copy Html codes &amp; paste it into <mark class="highlight-red">Online Html Viewer</mark></h3></div><div style="display:contents" dir="auto"><p id="2d92a5e8-d51e-814f-9d17-c7105ce6c639" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2d92a5e8-d51e-81e9-881b-d4c93b0d691b" class="code code-wrap"><code class="language-html" style="white-space:pre-wrap;word-break:break-all">&lt;svg baseProfile=&quot;tiny&quot; height=&quot;798&quot; version=&quot;1.2&quot; width=&quot;798&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:ev=&quot;http://www.w3.org/2001/xml-events&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+  &lt;polygon fill=&quot;white&quot; points=&quot;0,0 798,0 798,798 0,798&quot; stroke=&quot;blue&quot;/&gt;
+  &lt;polygon fill=&quot;rgb(238, 255, 221)&quot; points=&quot;19.0,19.0 779.0,19.0 779.0,779.0 19.0,779.0&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;399.0&quot; cy=&quot;399.0&quot; fill=&quot;none&quot; r=&quot;266.0&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot;/&gt;
+  &lt;polyline fill=&quot;none&quot; points=&quot;629.3628,532.0 399.0,665.0 168.6372,532.0 168.6372,266.0 399.0,133.0 629.3628,266.0 629.3628,532.0&quot; stroke=&quot;black&quot; stroke-linejoin=&quot;bevel&quot; stroke-width=&quot;0.5&quot;/&gt;
+  &lt;defs&gt;
+    &lt;g id=&quot;cir_A&quot;&gt;
+      &lt;circle cx=&quot;629.3628&quot; cy=&quot;399.0&quot; fill=&quot;red&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+    &lt;/g&gt;
+  &lt;/defs&gt;
+  &lt;circle cx=&quot;629.3628&quot; cy=&quot;399.0&quot; fill=&quot;red&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;514.1814&quot; cy=&quot;598.5&quot; fill=&quot;blue&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;283.8186&quot; cy=&quot;598.5&quot; fill=&quot;red&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;168.6372&quot; cy=&quot;399.0&quot; fill=&quot;blue&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;283.8186&quot; cy=&quot;199.5&quot; fill=&quot;red&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;514.1814&quot; cy=&quot;199.5&quot; fill=&quot;blue&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;line stroke=&quot;magenta&quot; stroke-dasharray=&quot;3,3&quot; stroke-width=&quot;0.5&quot; x1=&quot;629.3628&quot; x2=&quot;283.8186&quot; y1=&quot;399.0&quot; y2=&quot;598.5&quot;/&gt;
+  &lt;line stroke=&quot;magenta&quot; stroke-dasharray=&quot;3,3&quot; stroke-width=&quot;0.5&quot; x1=&quot;514.1814&quot; x2=&quot;168.6372&quot; y1=&quot;598.5&quot; y2=&quot;399.0&quot;/&gt;
+  &lt;circle cx=&quot;399.0&quot; cy=&quot;532.0&quot; fill=&quot;green&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;514.1814&quot; cy=&quot;465.5&quot; fill=&quot;green&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;514.1814&quot; cy=&quot;332.5&quot; fill=&quot;green&quot; r=&quot;5&quot; stroke=&quot;none&quot;/&gt;
+  &lt;circle cx=&quot;399.0&quot; cy=&quot;399.0&quot; fill=&quot;none&quot; r=&quot;133.0&quot; stroke=&quot;black&quot; stroke-width=&quot;0.5&quot;/&gt;
+  &lt;circle cx=&quot;514.1814&quot; cy=&quot;465.5&quot; fill=&quot;none&quot; r=&quot;97.3628&quot; stroke=&quot;green&quot; stroke-width=&quot;0.5&quot;/&gt;
+  &lt;circle cx=&quot;514.1814&quot; cy=&quot;332.5&quot; fill=&quot;none&quot; r=&quot;97.3628&quot; stroke=&quot;green&quot; stroke-width=&quot;0.5&quot;/&gt;
+  &lt;circle cx=&quot;629.3628&quot; cy=&quot;399.0&quot; fill=&quot;none&quot; r=&quot;97.3628&quot; stroke=&quot;blue&quot; stroke-width=&quot;0.5&quot;/&gt;
+  &lt;polygon fill=&quot;rgb(255, 224, 117)&quot; points=&quot;607.3291,304.1632 606.9285,304.2571 606.515,304.356 606.102,304.4567 605.6894,304.5591 605.2773,304.6634 604.8656,304.7694 604.4544,304.8773 604.0437,304.987 603.6334,305.0984 603.2237,305.2117 602.8144,305.3267 602.4056,305.4435 601.9974,305.5621 601.5897,305.6825 601.1825,305.8046 600.7758,305.9286 600.3697,306.0543 599.9642,306.1817 599.5592,306.311 599.1547,306.442 598.7509,306.5748 598.3476,306.7093 597.9449,306.8456 597.5429,306.9837 597.1414,307.1235 596.7405,307.2651 596.3403,307.4084 595.9407,307.5534 595.5417,307.7002 595.1434,307.8488 594.7457,307.9991 594.3487,308.1511 593.9524,308.3048 593.5567,308.4603 593.1617,308.6175 592.7674,308.7765 592.3738,308.9371 591.9809,309.0995 591.5888,309.2635 591.1973,309.4293 590.8066,309.5968 590.4166,309.766 590.0273,309.9369 589.6388,310.1095 589.2511,310.2838 588.8641,310.4598 588.4779,310.6375 588.0924,310.8169 587.7078,310.9979 587.3239,311.1806 586.9409,311.365 586.5587,311.5511 586.1772,311.7388 585.7966,311.9282 585.4169,312.1192 585.0379,312.312 584.6598,312.5063 584.2826,312.7023 583.9062,312.9 583.5307,313.0993 583.1561,313.3002 582.7823,313.5028 582.4095,313.707 582.0375,313.9128 581.6664,314.1203 581.2963,314.3293 580.927,314.54 580.5587,314.7523 580.1913,314.9662 579.8249,315.1817 579.4594,315.3988 579.0948,315.6175 578.7312,315.8378 578.3686,316.0597 578.0069,316.2831 577.6462,316.5081 577.2865,316.7347 576.9278,316.9629 576.5701,317.1926 576.2134,317.4239 575.8578,317.6568 575.5031,317.8912 575.1495,318.1271 574.7969,318.3646 574.4453,318.6036 574.0948,318.8442 573.7453,319.0862 573.3969,319.3299 573.0496,319.575 572.7033,319.8216 572.3581,320.0698 572.0141,320.3194 571.6711,320.5706 571.3292,320.8232 570.9884,321.0774 570.6487,321.333 570.3101,321.5901 569.9727,321.8487 569.6364,322.1087 569.3012,322.3703 568.9672,322.6332 568.6343,322.8977 568.3026,323.1636 567.9721,323.4309 567.6427,323.6997 567.3145,323.9699 566.9875,324.2415 566.6617,324.5146 566.337,324.7891 566.0136,325.065 565.6914,325.3423 565.3704,325.621 565.0506,325.9011 564.732,326.1826 564.4147,326.4655 564.0986,326.7498 563.7838,327.0354 563.4702,327.3224 563.1578,327.6108 562.8467,327.9006 562.5369,328.1917 562.2284,328.4842 561.9211,328.778 561.6152,329.0731 561.3105,329.3696 561.0071,329.6674 560.705,329.9665 560.4043,330.267 560.1048,330.5687 559.8067,330.8718 559.5099,331.1761 559.2144,331.4818 558.9202,331.7887 558.6274,332.0969 558.336,332.4064 558.0459,332.7172 557.7572,333.0292 557.4698,333.3425 557.1838,333.657 556.8992,333.9728 556.6159,334.2898 556.3341,334.6081 556.0536,334.9276 555.7746,335.2483 555.4969,335.5702 555.2207,335.8933 554.9458,336.2176 554.6724,336.5432 554.4004,336.8699 554.1298,337.1978 553.8607,337.5269 553.593,337.8571 553.3268,338.1885 553.062,338.5211 552.7986,338.8549 552.5367,339.1897 552.2763,339.5257 552.0174,339.8629 551.7599,340.2012 551.5039,340.5406 551.2494,340.8811 550.9964,341.2227 550.7448,341.5654 550.4948,341.9093 550.2463,342.2542 549.9993,342.6002 549.7538,342.9472 549.5098,343.2954 549.2673,343.6446 549.0264,343.9948 548.787,344.3461 548.5491,344.6985 548.3128,345.0518 548.078,345.4062 547.8447,345.7617 547.6131,346.1181 547.3829,346.4756 547.1544,346.834 546.9274,347.1935 546.702,347.5539 546.4781,347.9153 546.2559,348.2777 546.0352,348.6411 545.8161,349.0054 545.5986,349.3706 545.3827,349.7369 545.1684,350.104 544.9557,350.4721 544.7446,350.8411 544.5352,351.211 544.3273,351.5819 544.1211,351.9536 543.9165,352.3263 543.7135,352.6998 543.5121,353.0742 543.3124,353.4495 543.1144,353.8257 542.9179,354.2027 542.7232,354.5806 542.53,354.9593 542.3386,355.3389 542.1488,355.7192 541.9606,356.1005 541.7741,356.4825 541.5893,356.8653 541.4062,357.249 541.2247,357.6334 541.0449,358.0187 540.8668,358.4047 540.6904,358.7915 540.5157,359.179 540.3427,359.5674 540.1714,359.9564 540.0017,360.3462 539.8338,360.7368 539.6676,361.1281 539.5031,361.5201 539.3403,361.9128 539.1792,362.3062 539.0199,362.7003 538.8622,363.0951 538.7063,363.4906 538.5521,363.8868 538.3997,364.2837 538.249,364.6812 538.1,365.0793 537.9527,365.4781 537.8072,365.8776 537.6635,366.2777 537.5215,366.6784 537.3812,367.0797 537.2427,367.4816 537.106,367.8841 536.971,368.2873 536.8378,368.691 536.7063,369.0953 536.5766,369.5001 536.4487,369.9055 536.3226,370.3115 536.2149,370.6634 535.9946,370.6122 535.5801,370.5179 535.1652,370.4254 534.7498,370.3346 534.3341,370.2457 533.918,370.1587 533.5015,370.0734 533.0847,369.9899 532.6675,369.9083 532.2499,369.8285 531.832,369.7505 531.4138,369.6744 530.9952,369.6 530.5763,369.5275 530.1571,369.4569 529.7376,369.388 529.3178,369.321 528.8977,369.2558 528.4773,369.1925 528.0567,369.131 527.6358,369.0713 527.2146,369.0135 526.7932,368.9575 526.3715,368.9034 525.9496,368.8511 525.5275,368.8006 525.1052,368.752 524.6826,368.7052 524.2599,368.6603 523.837,368.6172 523.4139,368.576 522.9906,368.5366 522.5671,368.499 522.1435,368.4634 521.7197,368.4295 521.2958,368.3975 520.8717,368.3674 520.4476,368.3391 520.0233,368.3127 519.5989,368.2881 519.1744,368.2654 518.7497,368.2445 518.3251,368.2255 517.9003,368.2083 517.4754,368.193 517.0505,368.1795 516.6256,368.1679 516.2006,368.1582 515.7755,368.1503 515.3504,368.1443 514.9253,368.1401 514.5002,368.1378 514.0751,368.1373 513.65,368.1387 513.2249,368.1419 512.7998,368.147 512.3747,368.154 511.9497,368.1628 511.5247,368.1735 511.0998,368.186 510.6749,368.2004 510.2501,368.2166 509.8253,368.2347 509.4007,368.2547 508.9761,368.2765 508.5517,368.3001 508.1273,368.3256 507.7031,368.353 507.279,368.3822 506.855,368.4133 506.4311,368.4462 506.0074,368.481 505.5839,368.5176 505.1605,368.556 504.7373,368.5964 504.3143,368.6385 503.8915,368.6825 503.4688,368.7284 503.0464,368.7761 502.6242,368.8256 502.2022,368.877 501.7804,368.9302 501.3588,368.9853 500.9376,369.0422 500.5165,369.1009 500.0957,369.1615 499.6752,369.2239 499.255,369.2882 498.835,369.3543 498.4154,369.4222 497.996,369.492 497.577,369.5636 497.1582,369.637 496.7398,369.7122 496.3217,369.7893 495.904,369.8682 495.4866,369.9489 495.0696,370.0314 494.6529,370.1158 494.2366,370.202 493.8207,370.29 493.4052,370.3798 492.9901,370.4714 492.5753,370.5648 492.161,370.6601 491.7471,370.7571 491.3337,370.856 490.9206,370.9567 490.5081,371.0591 490.0959,371.1634 489.6842,371.2694 489.273,371.3773 488.8623,371.487 488.452,371.5984 488.0423,371.7117 487.633,371.8267 487.2243,371.9435 486.816,372.0621 486.4083,372.1825 486.0011,372.3046 485.5945,372.4286 485.1883,372.5543 484.7828,372.6817 484.3778,372.811 483.9734,372.942 483.5695,373.0748 483.1662,373.2093 482.7636,373.3456 482.3615,373.4837 481.96,373.6235 481.5592,373.7651 481.1589,373.9084 480.7593,374.0534 480.3604,374.2002 479.962,374.3488 479.5644,374.4991 479.1673,374.6511 478.771,374.8048 478.3753,374.9603 477.9803,375.1175 477.5861,375.2765 477.1925,375.4371 476.7996,375.5995 476.4074,375.7635 476.0159,375.9293 475.6252,376.0968 475.2352,376.266 474.8459,376.4369 474.4574,376.6095 474.0697,376.7838 473.6827,376.9598 473.2965,377.1375 472.9111,377.3169 472.5264,377.4979 472.1426,377.6806 471.7595,377.865 471.3773,378.0511 470.9959,378.2388 470.6153,378.4282 470.2355,378.6192 469.8566,378.812 469.4785,379.0063 469.1012,379.2023 468.7249,379.4 468.3493,379.5993 467.9747,379.8002 467.601,380.0028 467.2281,380.207 466.8561,380.4128 466.4851,380.6203 466.1149,380.8293 465.7456,381.04 465.3773,381.2523 465.0099,381.4662 464.6435,381.6817 464.278,381.8988 463.9134,382.1175 463.5498,382.3378 463.1872,382.5597 462.8255,382.7831 462.4649,383.0081 462.1052,383.2347 461.7465,383.4629 461.3888,383.6926 461.0321,383.9239 460.6764,384.1568 460.3217,384.3912 459.9681,384.6271 459.6155,384.8646 459.2639,385.1036 458.9134,385.3442 458.5639,385.5862 458.2155,385.8299 457.8682,386.075 457.5219,386.3216 457.1768,386.5698 456.8327,386.8194 456.4897,387.0706 456.1478,387.3232 455.807,387.5774 455.4673,387.833 455.1287,388.0901 454.7913,388.3487 454.455,388.6087 454.1198,388.8703 453.7858,389.1332 453.453,389.3977 453.1212,389.6636 452.7907,389.9309 452.4613,390.1997 452.1331,390.4699 451.8061,390.7415 451.4803,391.0146 451.1557,391.2891 450.8322,391.565 450.51,391.8423 450.189,392.121 449.8692,392.4011 449.5506,392.6826 449.2333,392.9655 448.9172,393.2498 448.6024,393.5354 448.2888,393.8224 447.9764,394.1108 447.6654,394.4006 447.3555,394.6917 447.047,394.9842 446.7398,395.278 446.4338,395.5731 446.1291,395.8696 445.8257,396.1674 445.5236,396.4665 445.2229,396.767 444.9234,397.0687 444.6253,397.3718 444.3285,397.6761 444.033,397.9818 443.7389,398.2887 443.4461,398.5969 443.1546,398.9064 443.0673,399.0 443.1546,399.0936 443.4461,399.4031 443.7389,399.7113 444.033,400.0182 444.3285,400.3239 444.6253,400.6282 444.9234,400.9313 445.2229,401.233 445.5236,401.5335 445.8257,401.8326 446.1291,402.1304 446.4338,402.4269 446.7398,402.722 447.047,403.0158 447.3555,403.3083 447.6654,403.5994 447.9764,403.8892 448.2888,404.1776 448.6024,404.4646 448.9172,404.7502 449.2333,405.0345 449.5506,405.3174 449.8692,405.5989 450.189,405.879 450.51,406.1577 450.8322,406.435 451.1557,406.7109 451.4803,406.9854 451.8061,407.2585 452.1331,407.5301 452.4613,407.8003 452.7907,408.0691 453.1212,408.3364 453.453,408.6023 453.7858,408.8668 454.1198,409.1297 454.455,409.3913 454.7913,409.6513 455.1287,409.9099 455.4673,410.167 455.807,410.4226 456.1478,410.6768 456.4897,410.9294 456.8327,411.1806 457.1768,411.4302 457.5219,411.6784 457.8682,411.925 458.2155,412.1701 458.5639,412.4138 458.9134,412.6558 459.2639,412.8964 459.6155,413.1354 459.9681,413.3729 460.3217,413.6088 460.6764,413.8432 461.0321,414.0761 461.3888,414.3074 461.7465,414.5371 462.1052,414.7653 462.4649,414.9919 462.8255,415.2169 463.1872,415.4403 463.5498,415.6622 463.9134,415.8825 464.278,416.1012 464.6435,416.3183 465.0099,416.5338 465.3773,416.7477 465.7456,416.96 466.1149,417.1707 466.4851,417.3797 466.8561,417.5872 467.2281,417.793 467.601,417.9972 467.9747,418.1998 468.3493,418.4007 468.7249,418.6 469.1012,418.7977 469.4785,418.9937 469.8566,419.188 470.2355,419.3808 470.6153,419.5718 470.9959,419.7612 471.3773,419.9489 471.7595,420.135 472.1426,420.3194 472.5264,420.5021 472.9111,420.6831 473.2965,420.8625 473.6827,421.0402 474.0697,421.2162 474.4574,421.3905 474.8459,421.5631 475.2352,421.734 475.6252,421.9032 476.0159,422.0707 476.4074,422.2365 476.7996,422.4005 477.1925,422.5629 477.5861,422.7235 477.9803,422.8825 478.3753,423.0397 478.771,423.1952 479.1673,423.3489 479.5644,423.5009 479.962,423.6512 480.3604,423.7998 480.7593,423.9466 481.1589,424.0916 481.5592,424.2349 481.96,424.3765 482.3615,424.5163 482.7636,424.6544 483.1662,424.7907 483.5695,424.9252 483.9734,425.058 484.3778,425.189 484.7828,425.3183 485.1883,425.4457 485.5945,425.5714 486.0011,425.6954 486.4083,425.8175 486.816,425.9379 487.2243,426.0565 487.633,426.1733 488.0423,426.2883 488.452,426.4016 488.8623,426.513 489.273,426.6227 489.6842,426.7306 490.0959,426.8366 490.5081,426.9409 490.9206,427.0433 491.3337,427.144 491.7471,427.2429 492.161,427.3399 492.5753,427.4352 492.9901,427.5286 493.4052,427.6202 493.8207,427.71 494.2366,427.798 494.6529,427.8842 495.0696,427.9686 495.4866,428.0511 495.904,428.1318 496.3217,428.2107 496.7398,428.2878 497.1582,428.363 497.577,428.4364 497.996,428.508 498.4154,428.5778 498.835,428.6457 499.255,428.7118 499.6752,428.7761 500.0957,428.8385 500.5165,428.8991 500.9376,428.9578 501.3588,429.0147 501.7804,429.0698 502.2022,429.123 502.6242,429.1744 503.0464,429.2239 503.4688,429.2716 503.8915,429.3175 504.3143,429.3615 504.7373,429.4036 505.1605,429.444 505.5839,429.4824 506.0074,429.519 506.4311,429.5538 506.855,429.5867 507.279,429.6178 507.7031,429.647 508.1273,429.6744 508.5517,429.6999 508.9761,429.7235 509.4007,429.7453 509.8253,429.7653 510.2501,429.7834 510.6749,429.7996 511.0998,429.814 511.5247,429.8265 511.9497,429.8372 512.3747,429.846 512.7998,429.853 513.2249,429.8581 513.65,429.8613 514.0751,429.8627 514.5002,429.8622 514.9253,429.8599 515.3504,429.8557 515.7755,429.8497 516.2006,429.8418 516.6256,429.8321 517.0505,429.8205 517.4754,429.807 517.9003,429.7917 518.3251,429.7745 518.7497,429.7555 519.1744,429.7346 519.5989,429.7119 520.0233,429.6873 520.4476,429.6609 520.8717,429.6326 521.2958,429.6025 521.7197,429.5705 522.1435,429.5366 522.5671,429.501 522.9906,429.4634 523.4139,429.424 523.837,429.3828 524.2599,429.3397 524.6826,429.2948 525.1052,429.248 525.5275,429.1994 525.9496,429.1489 526.3715,429.0966 526.7932,429.0425 527.2146,428.9865 527.6358,428.9287 528.0567,428.869 528.4773,428.8075 528.8977,428.7442 529.3178,428.679 529.7376,428.612 530.1571,428.5431 530.5763,428.4725 530.9952,428.4 531.4138,428.3256 531.832,428.2495 532.2499,428.1715 532.6675,428.0917 533.0847,428.0101 533.5015,427.9266 533.918,427.8413 534.3341,427.7543 534.7498,427.6654 535.1652,427.5746 535.5801,427.4821 535.9946,427.3878 536.2149,427.3366 536.3226,427.6885 536.4487,428.0945 536.5766,428.4999 536.7063,428.9047 536.8378,429.309 536.971,429.7127 537.106,430.1159 537.2427,430.5184 537.3812,430.9203 537.5215,431.3216 537.6635,431.7223 537.8072,432.1224 537.9527,432.5219 538.1,432.9207 538.249,433.3188 538.3997,433.7163 538.5521,434.1132 538.7063,434.5094 538.8622,434.9049 539.0199,435.2997 539.1792,435.6938 539.3403,436.0872 539.5031,436.4799 539.6676,436.8719 539.8338,437.2632 540.0017,437.6538 540.1714,438.0436 540.3427,438.4326 540.5157,438.821 540.6904,439.2085 540.8668,439.5953 541.0449,439.9813 541.2247,440.3666 541.4062,440.751 541.5893,441.1347 541.7741,441.5175 541.9606,441.8995 542.1488,442.2808 542.3386,442.6611 542.53,443.0407 542.7232,443.4194 542.9179,443.7973 543.1144,444.1743 543.3124,444.5505 543.5121,444.9258 543.7135,445.3002 543.9165,445.6737 544.1211,446.0464 544.3273,446.4181 544.5352,446.789 544.7446,447.1589 544.9557,447.5279 545.1684,447.896 545.3827,448.2631 545.5986,448.6294 545.8161,448.9946 546.0352,449.3589 546.2559,449.7223 546.4781,450.0847 546.702,450.4461 546.9274,450.8065 547.1544,451.166 547.3829,451.5244 547.6131,451.8819 547.8447,452.2383 548.078,452.5938 548.3128,452.9482 548.5491,453.3015 548.787,453.6539 549.0264,454.0052 549.2673,454.3554 549.5098,454.7046 549.7538,455.0528 549.9993,455.3998 550.2463,455.7458 550.4948,456.0907 550.7448,456.4346 550.9964,456.7773 551.2494,457.1189 551.5039,457.4594 551.7599,457.7988 552.0174,458.1371 552.2763,458.4743 552.5367,458.8103 552.7986,459.1451 553.062,459.4789 553.3268,459.8115 553.593,460.1429 553.8607,460.4731 554.1298,460.8022 554.4004,461.1301 554.6724,461.4568 554.9458,461.7824 555.2207,462.1067 555.4969,462.4298 555.7746,462.7517 556.0536,463.0724 556.3341,463.3919 556.6159,463.7102 556.8992,464.0272 557.1838,464.343 557.4698,464.6575 557.7572,464.9708 558.0459,465.2828 558.336,465.5936 558.6274,465.9031 558.9202,466.2113 559.2144,466.5182 559.5099,466.8239 559.8067,467.1282 560.1048,467.4313 560.4043,467.733 560.705,468.0335 561.0071,468.3326 561.3105,468.6304 561.6152,468.9269 561.9211,469.222 562.2284,469.5158 562.5369,469.8083 562.8467,470.0994 563.1578,470.3892 563.4702,470.6776 563.7838,470.9646 564.0986,471.2502 564.4147,471.5345 564.732,471.8174 565.0506,472.0989 565.3704,472.379 565.6914,472.6577 566.0136,472.935 566.337,473.2109 566.6617,473.4854 566.9875,473.7585 567.3145,474.0301 567.6427,474.3003 567.9721,474.5691 568.3026,474.8364 568.6343,475.1023 568.9672,475.3668 569.3012,475.6297 569.6364,475.8913 569.9727,476.1513 570.3101,476.4099 570.6487,476.667 570.9884,476.9226 571.3292,477.1768 571.6711,477.4294 572.0141,477.6806 572.3581,477.9302 572.7033,478.1784 573.0496,478.425 573.3969,478.6701 573.7453,478.9138 574.0948,479.1558 574.4453,479.3964 574.7969,479.6354 575.1495,479.8729 575.5031,480.1088 575.8578,480.3432 576.2134,480.5761 576.5701,480.8074 576.9278,481.0371 577.2865,481.2653 577.6462,481.4919 578.0069,481.7169 578.3686,481.9403 578.7312,482.1622 579.0948,482.3825 579.4594,482.6012 579.8249,482.8183 580.1913,483.0338 580.5587,483.2477 580.927,483.46 581.2963,483.6707 581.6664,483.8797 582.0375,484.0872 582.4095,484.293 582.7823,484.4972 583.1561,484.6998 583.5307,484.9007 583.9062,485.1 584.2826,485.2977 584.6598,485.4937 585.0379,485.688 585.4169,485.8808 585.7966,486.0718 586.1772,486.2612 586.5587,486.4489 586.9409,486.635 587.3239,486.8194 587.7078,487.0021 588.0924,487.1831 588.4779,487.3625 588.8641,487.5402 589.2511,487.7162 589.6388,487.8905 590.0273,488.0631 590.4166,488.234 590.8066,488.4032 591.1973,488.5707 591.5888,488.7365 591.9809,488.9005 592.3738,489.0629 592.7674,489.2235 593.1617,489.3825 593.5567,489.5397 593.9524,489.6952 594.3487,489.8489 594.7457,490.0009 595.1434,490.1512 595.5417,490.2998 595.9407,490.4466 596.3403,490.5916 596.7405,490.7349 597.1414,490.8765 597.5429,491.0163 597.9449,491.1544 598.3476,491.2907 598.7509,491.4252 599.1547,491.558 599.5592,491.689 599.9642,491.8183 600.3697,491.9457 600.7758,492.0714 601.1825,492.1954 601.5897,492.3175 601.9974,492.4379 602.4056,492.5565 602.8144,492.6733 603.2237,492.7883 603.6334,492.9016 604.0437,493.013 604.4544,493.1227 604.8656,493.2306 605.2773,493.3366 605.6894,493.4409 606.102,493.5433 606.515,493.644 606.9285,493.7429 607.3291,493.8368 607.4075,493.5785 607.5292,493.1712 607.6491,492.7633 607.7673,492.355 607.8836,491.9461 607.9982,491.5367 608.111,491.1268 608.222,490.7164 608.3312,490.3056 608.4386,489.8943 608.5442,489.4825 608.648,489.0702 608.7501,488.6575 608.8503,488.2444 608.9487,487.8308 609.0453,487.4168 609.1401,487.0024 609.2331,486.5876 609.3242,486.1723 609.4136,485.7567 609.5011,485.3407 609.5868,484.9243 609.6707,484.5076 609.7528,484.0904 609.8331,483.673 609.9115,483.2551 609.9881,482.837 610.0629,482.4185 610.1359,481.9997 610.207,481.5806 610.2763,481.1611 610.3438,480.7414 610.4094,480.3214 610.4732,479.9011 610.5352,479.4805 610.5953,479.0596 610.6536,478.6385 610.71,478.2172 610.7646,477.7956 610.8174,477.3737 610.8683,476.9517 610.9174,476.5294 610.9646,476.1069 611.01,475.6842 611.0536,475.2613 611.0953,474.8383 611.1351,474.415 611.1731,473.9916 611.2093,473.568 611.2436,473.1443 611.276,472.7204 611.3066,472.2964 611.3354,471.8722 611.3623,471.448 611.3873,471.0236 611.4105,470.5991 611.4319,470.1745 611.4513,469.7499 611.469,469.3251 611.4847,468.9003 611.4987,468.4754 611.5107,468.0504 611.5209,467.6254 611.5293,467.2004 611.5358,466.7753 611.5404,466.3502 611.5432,465.9251 611.5441,465.5 611.5432,465.0749 611.5404,464.6498 611.5358,464.2247 611.5293,463.7996 611.5209,463.3746 611.5107,462.9496 611.4987,462.5246 611.4847,462.0997 611.469,461.6749 611.4513,461.2501 611.4319,460.8255 611.4105,460.4009 611.3873,459.9764 611.3623,459.552 611.3354,459.1278 611.3066,458.7036 611.276,458.2796 611.2436,457.8557 611.2093,457.432 611.1731,457.0084 611.1351,456.585 611.0953,456.1617 611.0536,455.7387 611.01,455.3158 610.9646,454.8931 610.9174,454.4706 610.8683,454.0483 610.8174,453.6263 610.7646,453.2044 610.71,452.7828 610.6536,452.3615 610.5953,451.9404 610.5352,451.5195 610.4732,451.0989 610.4094,450.6786 610.3438,450.2586 610.2763,449.8389 610.207,449.4194 610.1359,449.0003 610.0629,448.5815 609.9881,448.163 609.9115,447.7449 609.8331,447.327 609.7528,446.9096 609.6707,446.4924 609.5868,446.0757 609.5011,445.6593 609.4136,445.2433 609.3242,444.8277 609.2331,444.4124 609.1401,443.9976 609.0453,443.5832 608.9487,443.1692 608.8503,442.7556 608.7501,442.3425 608.648,441.9298 608.5442,441.5175 608.4386,441.1057 608.3312,440.6944 608.222,440.2836 608.111,439.8732 607.9982,439.4633 607.8836,439.0539 607.7673,438.645 607.6491,438.2367 607.5292,437.8288 607.4075,437.4215 607.284,437.0147 607.1587,436.6084 607.0317,436.2027 606.9029,435.7976 606.7723,435.393 606.64,434.989 606.5059,434.5856 606.37,434.1828 606.2324,433.7806 606.093,433.3789 605.9519,432.9779 605.809,432.5775 605.6644,432.1778 605.518,431.7787 605.3699,431.3802 605.22,430.9823 605.0685,430.5852 604.9151,430.1886 604.7601,429.7928 604.6033,429.3977 604.4448,429.0032 604.2846,428.6094 604.1227,428.2163 603.959,427.824 603.7937,427.4323 603.6266,427.0414 603.4578,426.6512 603.2873,426.2618 603.1152,425.8731 602.9413,425.4852 602.7657,425.098 602.5885,424.7116 602.4095,424.326 602.2289,423.9411 602.0466,423.5571 601.8626,423.1738 601.677,422.7914 601.4897,422.4098 601.3007,422.0289 601.11,421.649 600.9178,421.2698 600.7238,420.8915 600.5282,420.5141 600.331,420.1375 600.1321,419.7618 599.9315,419.3869 599.7294,419.0129 599.5256,418.6398 599.3202,418.2676 599.1131,417.8964 598.9044,417.526 598.6942,417.1565 598.4823,416.7879 598.2688,416.4203 598.0537,416.0536 597.837,415.6879 597.6187,415.3231 597.3988,414.9593 597.1773,414.5964 596.9543,414.2345 596.7296,413.8736 596.5034,413.5136 596.2757,413.1547 596.0463,412.7967 595.8154,412.4398 595.583,412.0838 595.349,411.7289 595.1134,411.375 594.8763,411.0222 594.6377,410.6703 594.3975,410.3196 594.1558,409.9698 593.9126,409.6212 593.6678,409.2736 593.4216,408.927 593.1738,408.5816 592.9245,408.2372 592.6737,407.8939 592.4215,407.5518 592.1677,407.2107 591.9124,406.8707 591.6557,406.5319 591.3975,406.1942 591.1378,405.8576 590.8766,405.5221 590.614,405.1878 590.35,404.8547 590.0844,404.5227 589.8175,404.1918 589.549,403.8622 589.2792,403.5337 589.0079,403.2064 588.7352,402.8802 588.4611,402.5553 588.1855,402.2316 587.9086,401.9091 587.6302,401.5878 587.3504,401.2677 587.0693,400.9488 586.7867,400.6312 586.5028,400.3147 586.2175,399.9996 585.9308,399.6857 585.6428,399.373 585.3534,399.0616 585.2956,399.0 585.3534,398.9384 585.6428,398.627 585.9308,398.3143 586.2175,398.0004 586.5028,397.6853 586.7867,397.3688 587.0693,397.0512 587.3504,396.7323 587.6302,396.4122 587.9086,396.0909 588.1855,395.7684 588.4611,395.4447 588.7352,395.1198 589.0079,394.7936 589.2792,394.4663 589.549,394.1378 589.8175,393.8082 590.0844,393.4773 590.35,393.1453 590.614,392.8122 590.8766,392.4779 591.1378,392.1424 591.3975,391.8058 591.6557,391.4681 591.9124,391.1293 592.1677,390.7893 592.4215,390.4482 592.6737,390.1061 592.9245,389.7628 593.1738,389.4184 593.4216,389.073 593.6678,388.7264 593.9126,388.3788 594.1558,388.0302 594.3975,387.6804 594.6377,387.3297 594.8763,386.9778 595.1134,386.625 595.349,386.2711 595.583,385.9162 595.8154,385.5602 596.0463,385.2033 596.2757,384.8453 596.5034,384.4864 596.7296,384.1264 596.9543,383.7655 597.1773,383.4036 597.3988,383.0407 597.6187,382.6769 597.837,382.3121 598.0537,381.9464 598.2688,381.5797 598.4823,381.2121 598.6942,380.8435 598.9044,380.474 599.1131,380.1036 599.3202,379.7324 599.5256,379.3602 599.7294,378.9871 599.9315,378.6131 600.1321,378.2382 600.331,377.8625 600.5282,377.4859 600.7238,377.1085 600.9178,376.7302 601.11,376.351 601.3007,375.9711 601.4897,375.5902 601.677,375.2086 601.8626,374.8262 602.0466,374.4429 602.2289,374.0589 602.4095,373.674 602.5885,373.2884 602.7657,372.902 602.9413,372.5148 603.1152,372.1269 603.2873,371.7382 603.4578,371.3488 603.6266,370.9586 603.7937,370.5677 603.959,370.176 604.1227,369.7837 604.2846,369.3906 604.4448,368.9968 604.6033,368.6023 604.7601,368.2072 604.9151,367.8114 605.0685,367.4148 605.22,367.0177 605.3699,366.6198 605.518,366.2213 605.6644,365.8222 605.809,365.4225 605.9519,365.0221 606.093,364.6211 606.2324,364.2194 606.37,363.8172 606.5059,363.4144 606.64,363.011 606.7723,362.607 606.9029,362.2024 607.0317,361.7973 607.1587,361.3916 607.284,360.9853 607.4075,360.5785 607.5292,360.1712 607.6491,359.7633 607.7673,359.355 607.8836,358.9461 607.9982,358.5367 608.111,358.1268 608.222,357.7164 608.3312,357.3056 608.4386,356.8943 608.5442,356.4825 608.648,356.0702 608.7501,355.6575 608.8503,355.2444 608.9487,354.8308 609.0453,354.4168 609.1401,354.0024 609.2331,353.5876 609.3242,353.1723 609.4136,352.7567 609.5011,352.3407 609.5868,351.9243 609.6707,351.5076 609.7528,351.0904 609.8331,350.673 609.9115,350.2551 609.9881,349.837 610.0629,349.4185 610.1359,348.9997 610.207,348.5806 610.2763,348.1611 610.3438,347.7414 610.4094,347.3214 610.4732,346.9011 610.5352,346.4805 610.5953,346.0596 610.6536,345.6385 610.71,345.2172 610.7646,344.7956 610.8174,344.3737 610.8683,343.9517 610.9174,343.5294 610.9646,343.1069 611.01,342.6842 611.0536,342.2613 611.0953,341.8383 611.1351,341.415 611.1731,340.9916 611.2093,340.568 611.2436,340.1443 611.276,339.7204 611.3066,339.2964 611.3354,338.8722 611.3623,338.448 611.3873,338.0236 611.4105,337.5991 611.4319,337.1745 611.4513,336.7499 611.469,336.3251 611.4847,335.9003 611.4987,335.4754 611.5107,335.0504 611.5209,334.6254 611.5293,334.2004 611.5358,333.7753 611.5404,333.3502 611.5432,332.9251 611.5441,332.5 611.5432,332.0749 611.5404,331.6498 611.5358,331.2247 611.5293,330.7996 611.5209,330.3746 611.5107,329.9496 611.4987,329.5246 611.4847,329.0997 611.469,328.6749 611.4513,328.2501 611.4319,327.8255 611.4105,327.4009 611.3873,326.9764 611.3623,326.552 611.3354,326.1278 611.3066,325.7036 611.276,325.2796 611.2436,324.8557 611.2093,324.432 611.1731,324.0084 611.1351,323.585 611.0953,323.1617 611.0536,322.7387 611.01,322.3158 610.9646,321.8931 610.9174,321.4706 610.8683,321.0483 610.8174,320.6263 610.7646,320.2044 610.71,319.7828 610.6536,319.3615 610.5953,318.9404 610.5352,318.5195 610.4732,318.0989 610.4094,317.6786 610.3438,317.2586 610.2763,316.8389 610.207,316.4194 610.1359,316.0003 610.0629,315.5815 609.9881,315.163 609.9115,314.7449 609.8331,314.327 609.7528,313.9096 609.6707,313.4924 609.5868,313.0757 609.5011,312.6593 609.4136,312.2433 609.3242,311.8277 609.2331,311.4124 609.1401,310.9976 609.0453,310.5832 608.9487,310.1692 608.8503,309.7556 608.7501,309.3425 608.648,308.9298 608.5442,308.5175 608.4386,308.1057 608.3312,307.6944 608.222,307.2836 608.111,306.8732 607.9982,306.4633 607.8836,306.0539 607.7673,305.645 607.6491,305.2367 607.5292,304.8288 607.4075,304.4215 607.3291,304.1632&quot; stroke=&quot;green&quot;/&gt;
+&lt;/svg&gt;</code></pre></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
